@@ -2,7 +2,9 @@ body {
 	/*max-width: 960px;*/
 }
 
-/* NAVBAR */
+a:hover {
+	text-decoration: none;
+}
 
 /* Hero Unit */
 .jumbotron {
@@ -18,12 +20,28 @@ body {
 	padding: 40px 0 0 0px;
 }
 
+/* Panels */
+.panel-body {
+	/*text-align: center;*/
+}
+
+.panel-center {
+	text-align: center;
+}
+
+.panel-scrollable { 
+	max-height: 200px;
+	overflow-y: scroll;
+}
 /* Media Queries */
 @media screen and (max-width: 960px) {
 }
 @media screen and (max-width: 768px) {
 	.main {
 		padding: 0px;
+	}
+	.jumbotron {
+		padding: 35px 0 0 0 !important;
 	}
 }
 @media screen and (max-width: 500px) {
