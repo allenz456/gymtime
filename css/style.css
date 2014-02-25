@@ -3,7 +3,7 @@ body {
 }
 
 /* NAVBAR */
-.navbar-default {
+.navbar-wrapper {
 	max-width: 960px;
 	margin: 0 auto;
 }
