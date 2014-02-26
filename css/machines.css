@@ -2,21 +2,30 @@
 	margin-bottom: 60px;
 }
 
-ul.machines {
+table.machines {
 	text-align: center;
-	list-style-type: none;
-	margin-left: -50px;
+	margin: 0 auto;
 }
 
-ul.machines li {
+table.machines tr {
 	margin-bottom: 30px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
-ul.machines li > img {
+table.machines th {
+	padding: 5px 15px 5px 20px;
+	text-align: right;
+}
+
+table.machines td {
+	padding: 5px 10px 5px 10px;
+	border-right: 1px solid #dfdfdf;
+}
+
+table.machines td > img {
 	margin-right: 20px;
 }
 
-ul.machines li > span {
-	margin-left: 100px;
+table.machines td > span {
+	/*margin-left: 30px;*/
 }
