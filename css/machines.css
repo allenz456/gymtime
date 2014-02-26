@@ -1,0 +1,13 @@
+.jumbotron {
+	margin-bottom: 60px;
+}
+
+ul.machines {
+	text-align: center;
+	list-style-type: none;
+}
+
+ul.machines li {
+	margin-bottom: 30px;
+	font-size: 15px;
+}
