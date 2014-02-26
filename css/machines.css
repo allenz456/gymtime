@@ -5,9 +5,18 @@
 ul.machines {
 	text-align: center;
 	list-style-type: none;
+	margin-left: -50px;
 }
 
 ul.machines li {
 	margin-bottom: 30px;
-	font-size: 15px;
+	font-size: 18px;
+}
+
+ul.machines li > img {
+	margin-right: 20px;
+}
+
+ul.machines li > span {
+	margin-left: 100px;
 }
