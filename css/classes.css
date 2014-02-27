@@ -24,4 +24,9 @@
 	.btn {
 		font-size: 9px;
 	}
+
+	.panel-scrollable { 
+		max-height: 375px;
+		overflow-y: scroll;
+	}
 }
