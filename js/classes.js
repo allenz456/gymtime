@@ -52,7 +52,7 @@ function displayClass(selectedClass) {
     var HTML = "";
     var classInfo = schedule[day];
     HTML += "<h3>"+ day + "</h3><hr><div class='row'>"
-          + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
+          + "<div class='col-sm-2 col-sm-offset-10 col-xs-offset-8 text-center'><h6>Attending?</h6></div>"
           + "</div>"; 
     for (var info in classInfo) {
       if (classInfo[info]["name"] == selectedClass) {
@@ -61,7 +61,7 @@ function displayClass(selectedClass) {
         var classTime = classInfo[info]["time"];
 
        HTML += "<div class='row'>"
-            + "<div class='col-sm-10'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
+            + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
             + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox'></label></div></div>"
             + "</div>"; 
       }
@@ -77,7 +77,7 @@ function displayType(type) {
   for (var day in schedule) {
     var classInfo = schedule[day];
     document.getElementById("classes").innerHTML += "<h3>"+ day + "</h3><hr><div class='row'>"
-                                                  + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
+                                                  + "<div class='col-sm-2 col-sm-offset-10 col-xs-offset-8 text-center'><h6>Attending?</h6></div>"
                                                   + "</div>"; 
     for (var info in classInfo) {
       if (classInfo[info]["type"] == type) {
@@ -85,7 +85,7 @@ function displayType(type) {
       var classTime = classInfo[info]["time"];
 
      document.getElementById("classes").innerHTML += "<div class='row'>"
-                                                  + "<div class='col-sm-10'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
+                                                  + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
                                                   + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox'></label></div></div>"
                                                   + "</div>"; 
       }
