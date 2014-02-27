@@ -1,21 +1,78 @@
+var schedule = loadSchedule()["schedule"];
 $(document).ready(function(){
-
-  var schedule = loadAllClasses()["schedule"];
-  displayMB(schedule);
+  
+  var classes = loadClasses()["classes"];
+  displayType("MB");
+  var classesCS = classes["MB"];
+  document.getElementById("class-filter").innerHTML = '<option value="MB">All Classes</option>';
+  for (var classCS in classesCS) {
+      document.getElementById("class-filter").innerHTML += '<option>' + classesCS[classCS] + '</option>';
+    }
 
   $('#CS').bind("click", function() {
     console.log("CS");
-    displayCS(schedule);
+    displayType("CS");
+    changeFilterClasses(classes["CS"]);
   });
 
   $('#MB').bind("click", function() {
     console.log("MB");
-    displayMB(schedule);
+    displayType("MB");
+    changeFilterClasses(classes["MB"]);
   });
+
 
 });
 
-function displayMB(schedule) {
+function changeFilterClasses(classes) {
+  document.getElementById("class-filter").innerHTML = '<option value="CS">All Classes</option>';
+    for (var filterClass in classes) {
+      document.getElementById("class-filter").innerHTML += '<option>' + classes[filterClass] + '</option>';
+    }
+}
+
+function filterClass() {
+  var selected = document.getElementById("class-filter");
+  selectedClass = selected.options[selected.selectedIndex].text;
+  if (selectedClass == "All Classes") {
+    selectedClass = selected.options[selected.selectedIndex].value;
+    displayType(selectedClass);
+  } else {
+    displayClass(selectedClass);
+  }
+  console.log(selectedClass);
+
+}
+
+function displayClass(selectedClass) {
+  document.getElementById("classes").innerHTML = "";
+  
+  for (var day in schedule) {
+    var numClasses = 0;
+    var HTML = "";
+    var classInfo = schedule[day];
+    HTML += "<h3>"+ day + "</h3><hr><div class='row'>"
+          + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
+          + "</div>"; 
+    for (var info in classInfo) {
+      if (classInfo[info]["name"] == selectedClass) {
+        numClasses += 1;
+        var className = classInfo[info]["name"];
+        var classTime = classInfo[info]["time"];
+
+       HTML += "<div class='row'>"
+            + "<div class='col-sm-10'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
+            + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox'></label></div></div>"
+            + "</div>"; 
+      }
+    }
+    if (numClasses > 0) {
+      document.getElementById("classes").innerHTML += HTML;
+    }
+  }
+}
+
+function displayType(type) {
   document.getElementById("classes").innerHTML = "";
   for (var day in schedule) {
     var classInfo = schedule[day];
@@ -23,7 +80,7 @@ function displayMB(schedule) {
                                                   + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
                                                   + "</div>"; 
     for (var info in classInfo) {
-      if (classInfo[info]["type"] == "MB") {
+      if (classInfo[info]["type"] == type) {
       var className = classInfo[info]["name"];
       var classTime = classInfo[info]["time"];
 
@@ -36,48 +93,10 @@ function displayMB(schedule) {
   }
 }
 
-function displayCS(schedule) {
-  document.getElementById("classes").innerHTML = "";
-  for (var day in schedule) {
-    var classInfo = schedule[day];
-    document.getElementById("classes").innerHTML += "<h3>"+ day + "</h3><hr><div class='row'>"
-                                                  + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
-                                                  + "</div>"; 
-    for (var info in classInfo) {
-      if (classInfo[info]["type"] == "CS") {
-      var className = classInfo[info]["name"];
-      var classTime = classInfo[info]["time"];
 
-     document.getElementById("classes").innerHTML += "<div class='row'>"
-                                                  + "<div class='col-sm-10'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
-                                                  + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox'></label></div></div>"
-                                                  + "</div>"; 
-      }
-    }
-  }
-}
 
-function displayBoth(schedule) {
-  for (var day in schedule) {
-    var classInfo = schedule[day];
-    document.getElementById("classes").innerHTML = "<h3>"+ day + "</h3><hr><div class='row'>"
-                                                  + "<div class='col-sm-2 col-sm-offset-10 text-center'><h6>Attending?</h6></div>"
-                                                  + "</div>"; 
-    for (var info in classInfo) {
-      if (classInfo[info]["type"] == "MB" || classInfo[info]["type"] == "CS") {
-      var className = classInfo[info]["name"];
-      var classTime = classInfo[info]["time"];
-
-     document.getElementById("classes").innerHTML += "<div class='row'>"
-                                                  + "<div class='col-sm-10'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
-                                                  + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox'></label></div></div>"
-                                                  + "</div>"; 
-      }
-    }
-  }
-}
 // Need better way to retrieve JSON
-function loadAllClasses() {
+function loadSchedule() {
 
   var classes = jQuery.parseJSON('{"schedule": {"Monday": [{ "name": "Aqua Fitness", "type": "CS", "time": "08:30 - 09:30"},\
           { "name": "Bodypump", "type": "CS", "time": "12:00 - 12:30"},\
@@ -101,9 +120,29 @@ function loadAllClasses() {
           { "name": "Yoga - All Levels", "type": "MB", "time": "17:30 - 18:30"},\
           { "name": "Athletic Pilates", "type": "MB", "time": "19:00 - 20:00"}]}}');
 
-  console.log(classes)
   return classes
 }
-// Load Mind/Body Classes
-// Load Cardio/Strength Classes
-// Load selected classes 
+
+function loadClasses() {
+  var classes = jQuery.parseJSON('{"classes": {"MB": ["Athletic Pilates",\
+          "Athletic Yoga",\
+          "Hatha 1-2",\
+          "Hatha 2-3",\
+          "Pilates",\
+          "Vinyasa",\
+          "Yoga - All Levels"],\
+      "CS": ["Aqua Fitness",\
+          "Bodypump",\
+          "Cardio Blast",\
+          "Cardio Combat",\
+          "Circuit Conditioning",\
+          "Core Conditioning",\
+          "Cycle Challenge",\
+          "Cycle Circuit",\
+          "Cycle Express",\
+          "H.I.I.T",\
+          "WERQ",\
+          "Zumba"]}}');
+
+  return classes
+}

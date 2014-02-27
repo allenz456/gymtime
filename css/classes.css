@@ -7,3 +7,9 @@
 	border: 3px solid #269abc;
 	background-color: #fff;
 }
+
+.form-control {
+  	width: 18%;
+  	height: 34.5px;
+  	display: inline;
+}

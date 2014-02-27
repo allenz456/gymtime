@@ -21,4 +21,24 @@
 					{ "name": "Yoga - All Levels", "type": "MB", "time": "17:30 - 18:30"},
 					{ "name": "Athletic Pilates", "type": "MB", "time": "19:00 - 20:00"}],
 			}
-}
+},
+
+{"classes": {"MB": ["Athletic Pilates",
+					"Athletic Yoga",
+					"Hatha 1-2",
+					"Hatha 2-3",
+					"Pilates",
+					"Vinyasa",
+					"Yoga - All Levels"],
+			"CS": ["Aqua Fitness",
+					"Bodypump",
+					"Cardio Blast",
+					"Cardio Combat",
+					"Circuit Conditioning",
+					"Core Conditioning",
+					"Cycle Challenge",
+					"Cycle Circuit",
+					"Cycle Express",
+					"H.I.I.T",
+					"WERQ",
+					"Zumba"]}}
