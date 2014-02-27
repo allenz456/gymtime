@@ -1,0 +1,31 @@
+.jumbotron {
+	margin-bottom: 60px;
+}
+
+table.machines {
+	text-align: center;
+	margin: 0 auto;
+}
+
+table.machines tr {
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+
+table.machines th {
+	padding: 5px 15px 5px 20px;
+	text-align: right;
+}
+
+table.machines td {
+	padding: 5px 10px 5px 10px;
+	border-right: 1px solid #dfdfdf;
+}
+
+table.machines td > img {
+	margin-right: 20px;
+}
+
+table.machines td > span {
+	/*margin-left: 30px;*/
+}
