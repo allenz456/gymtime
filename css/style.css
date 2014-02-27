@@ -21,18 +21,11 @@ a:hover {
 }
 
 /* Panels */
-.panel-body {
-	/*text-align: center;*/
-}
-
-.panel-center {
-	text-align: center;
-}
-
 .panel-scrollable { 
-	max-height: 200px;
+	max-height: 500px;
 	overflow-y: scroll;
 }
+
 /* Media Queries */
 @media screen and (max-width: 960px) {
 }

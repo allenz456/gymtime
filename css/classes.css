@@ -1,0 +1,9 @@
+/* Class Page */
+.attending-btn {
+	margin-top: 70%;
+	width: 20px;
+	height: 25px;
+	border-radius: 50px;
+	border: 3px solid #269abc;
+	background-color: #fff;
+}
