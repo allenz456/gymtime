@@ -21,24 +21,30 @@ $(document).ready(function(){
     changeFilterClasses(classes["MB"]);
   });
 
-  $("input.sign-up").each(function() {
-    var mycookie = $.cookie($(this).attr('id'));
-    if (mycookie && mycookie == "true") {
-        $(this).prop('checked', mycookie);
-    }
-  });
-  $("input.sign-up").change(function() {
-    console.log("clicked" + $(this).attr("id"));
-      $.cookie($(this).attr("id"), $(this).prop('checked'), {
-          path: '/',
-          expires: 365
-      });
-  });
+  recallSelectedClasses();
+  rememberSelectedClasses();
 
 });
 
-function rememberSelectedClasses() {
+function recallSelectedClasses() {
+  $("input.sign-up").each(function() {
+  var mycookie = $.cookie($(this).attr('id'));
+  if (mycookie && mycookie == "true") {
+      $(this).prop('checked', true);
+      $(this).parent().addClass("active");
+  }
+  });
+}
 
+function rememberSelectedClasses() {
+  $("input.sign-up").change(function() {
+  console.log("clicked" + $(this).attr("id"));
+  // localStorage.setItem($(this).attr("id"), $(this).prop('checked'));
+    $.cookie($(this).attr("id"), $(this).prop('checked'), {
+        path: '/',
+        expires: 365
+    });
+  });
 }
 
 function changeFilterClasses(classes) {
@@ -79,7 +85,7 @@ function displayClass(selectedClass) {
 
        HTML += "<div class='row'>"
             + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
-            + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox' class='sign-up' id='"+className+"-"+day+"'></label></div></div>"
+            + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox' class='sign-up' id='"+className+"-"+day+"-"+classTime+"'></label></div></div>"
             + "</div>"; 
       }
     }
@@ -87,6 +93,8 @@ function displayClass(selectedClass) {
       document.getElementById("classes").innerHTML += HTML;
     }
   }
+  recallSelectedClasses();
+  rememberSelectedClasses();
 }
 
 function displayType(type) {
@@ -103,11 +111,13 @@ function displayType(type) {
 
      document.getElementById("classes").innerHTML += "<div class='row'>"
                                                   + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
-                                                  + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox' class='sign-up' id='"+className+"-"+day+"'></label></div></div>"
+                                                  + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox' class='sign-up' id='"+className+"-"+day+"-"+classTime+"'></label></div></div>"
                                                   + "</div>"; 
       }
     }
   }
+  recallSelectedClasses();
+  rememberSelectedClasses();
 }
 
 
