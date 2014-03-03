@@ -118,7 +118,17 @@ function loadSchedule() {
           { "name": "Athletic Yoga", "type": "MB", "time": "7:00 - 8:00"},\
           { "name": "Vinyasa", "type": "MB", "time": "12:00 - 1:00"},\
           { "name": "Yoga - All Levels", "type": "MB", "time": "17:30 - 18:30"},\
-          { "name": "Athletic Pilates", "type": "MB", "time": "19:00 - 20:00"}]}}');
+          { "name": "Athletic Pilates", "type": "MB", "time": "19:00 - 20:00"}],\
+      "Wednesday":  [{ "name": "Aqua Fitness", "type": "CS", "time": "08:30 - 09:30"},\
+          { "name": "Bodypump", "type": "CS", "time": "12:00 - 12:30"},\
+          { "name": "Cycle Circuit", "type": "CS", "time": "16:15 - 16:45"},\
+          { "name": "Cardio Blast", "type": "CS", "time": "17:30 - 18:30"},\
+          { "name": "Core Conditioning", "type": "CS", "time": "18:05 - 18:35"},\
+          { "name": "WERQ", "type": "CS", "time": "18:45 - 19:45"},\
+          { "name": "Athletic Yoga", "type": "MB", "time": "7:00 - 8:00"},\
+          { "name": "Yoga - All Levels", "type": "MB", "time": "12:00 - 13:00"},\
+          { "name": "Vinyasa", "type": "MB", "time": "17:30 - 18:30"},\
+          { "name": "Yoga - All Levels", "type": "MB", "time": "19:00 - 20:00"}]}}');
 
   return classes
 }
