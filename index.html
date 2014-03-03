@@ -36,126 +36,129 @@
   </nav>
 
   <div id="gymtimeapp">
-	  <div class="content">
-	  </div>
+    <div class="content">
+    </div>
   </div>
 
   <script type="text/template" id="welcome-template">
-	  <div class="container">
-	    <div class="jumbotron">
-	      <h1>GymTime</h1>
-	      <p>A webapp to help you plan your workout at Northwestern SPAC.</p>
-		    </div>
-		  </div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>GymTime</h1>
+        <p>A webapp to help you plan your workout at Northwestern SPAC.</p>
+        </div>
+      </div>
 
-		  <div class="container main">
-		    <div class="row-fluid">
-		      <div class="col-sm-8 col-sm-offset-3">
-		        <div class="col-sm-3"><a href="#/courts"><img src="img/squash.png" width="150"><h4>Courts</h4></a></div>
-		        <div class="col-sm-3"><a href="#/machines"><img src="img/treadmill.png" width="150"><h4>Machines</h4></a></div>
-		        <div class="col-sm-3"><a href="#/classes"><img src="img/yoga.png" width="150"><h4>Classes</h4></a></div>
-		      </div>
-		    </div>
-		  </div>
+      <div class="container main">
+        <div class="row-fluid">
+          <div class="col-sm-8 col-sm-offset-3">
+            <div class="col-sm-3"><a href="#/courts"><img src="img/squash.png" width="150"><h4>Courts</h4></a></div>
+            <div class="col-sm-3"><a href="#/machines"><img src="img/treadmill.png" width="150"><h4>Machines</h4></a></div>
+            <div class="col-sm-3"><a href="classes.html"><img src="img/yoga.png" width="150"><h4>Classes</h4></a></div>
+
+          </div>
+        </div>
+      </div>
   </script>
 
   <script type="text/template" id="classes-template">
-  	<link rel="stylesheet" type="text/css" href="css/classes.css">
-		<div class="container">
-	    <div class="jumbotron">
-	      <h1>Classes</h1>
-	      <p>Sign up for classes.</p>
-	    </div>
+    <link rel="stylesheet" type="text/css" href="css/classes.css">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Classes</h1>
+        <p>Sign up for classes.</p>
+      </div>
 
-	    <div class="row">
+      <div class="row">
 
-	      <div class="col-sm-8 col-sm-offset-2">
-	        <div class="panel panel-info">
-	          <div class="panel-heading text-center">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-heading text-center">
 
-	              <div class="btn-group" data-toggle="buttons">
-	                <label class="btn btn-info active" id="MB">
-	                  <input type="radio"> Mind/Body
-	                </label>
-	                <label class="btn btn-info" id="CS">
-	                  <input type="radio"> Cardio/Strength
-	                </label>
-	              </div>
-	              <select class="form-control" id="class-filter" onchange="filterClass();">
-	                <option value="MB">All Classes</option>
-	                <option>2</option>
-	                <option>3</option>
-	                <option>4</option>
-	                <option>5</option>
-	              </select>
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-info active" id="MB">
+                    <input type="radio"> Mind/Body
+                  </label>
+                  <label class="btn btn-info" id="CS">
+                    <input type="radio"> Cardio/Strength
+                  </label>
+                </div>
+                <select class="form-control" id="class-filter" onchange="filterClass();">
+                  <option value="MB">All Classes</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
 
-	          </div>
-	          <div class="panel-body panel-scrollable" id="classes">
-
-	          </div>
-	        </div>
-	      </div>
-	    </div> <!--row-->
-	  </div>
+            </div>
+            <div class="panel-body panel-scrollable" id="classes">
+              <% _.each(test, function(t)  { %>
+      <li><%= t.day %></li>
+    <% }); %>
+            </div>
+          </div>
+        </div>
+      </div> <!--row-->
+    </div>
   </script>
 
   <script type="text/template" id="courts-template">
-	  <div class="container">
-	    <div class="jumbotron">
-	      <h1>Courts</h1>
-	      <p>View court status.</p>
-	    </div>
-	  </div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Courts</h1>
+        <p>View court status.</p>
+      </div>
+    </div>
   </script>
 
   <script type="text/template" id="machines-template">
-	  <link rel="stylesheet" type="text/css" href="css/machines.css">
-	  <div class="container">
-	    <div class="jumbotron">
-	      <h1>Machines</h1>
-	      <p>View available machines.</p>
-	    </div>
-	    <table class="machines">
-	      <thead>
-	        <th></th>
-	        <th>Machine Type</th>
-	        <th>Free</th>
-	        <th>Occupied</th>
-	      </thead>
-	      <tbody>
-	      <tr>
-	        <td><img src="img/i_treadmill.png" width="50"></td>
-	        <td>Treadmill</td>
-	        <td><span>6</span></td>
-	        <td><span>3</span></td>
-	      </tr>
-	      <tr>
-	        <td><img src="img/i_ellyptical.png" width="60"></td>
-	        <td>Ellyptical</td>
-	        <td><span>8</span></td>
-	        <td><span>4</span></td>
-	      </tr>
-	      <tr>
-	        <td><img src="img/i_bicycle.png" width="50"></td>
-	        <td>Bicycle</td>
-	        <td><span>1</span></td>
-	        <td><span>3</span></td>
-	      </tr>
-	      <tr>
-	        <td><img src="img/i_rowing.png" width="50"></td>
-	        <td>Rowing</td>
-	        <td><span>3</span></td>
-	        <td><span>0</span></td>
-	      </tr>
-	      <tr>
-	        <td><img src="img/i_stairmaster.png" width="50"></td>
-	        <td>Stairmaster</td>
-	        <td><span>4</span></td>
-	        <td><span>1</span></td>
-	      </tr>
-	    </tbody>
-	    </table>
-	  </div>
+    <link rel="stylesheet" type="text/css" href="css/machines.css">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Machines</h1>
+        <p>View available machines.</p>
+      </div>
+      <table class="machines">
+        <thead>
+          <th></th>
+          <th>Machine Type</th>
+          <th>Free</th>
+          <th>Occupied</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td><img src="img/i_treadmill.png" width="50"></td>
+          <td>Treadmill</td>
+          <td><span>6</span></td>
+          <td><span>3</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_ellyptical.png" width="60"></td>
+          <td>Ellyptical</td>
+          <td><span>8</span></td>
+          <td><span>4</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_bicycle.png" width="50"></td>
+          <td>Bicycle</td>
+          <td><span>1</span></td>
+          <td><span>3</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_rowing.png" width="50"></td>
+          <td>Rowing</td>
+          <td><span>3</span></td>
+          <td><span>0</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_stairmaster.png" width="50"></td>
+          <td>Stairmaster</td>
+          <td><span>4</span></td>
+          <td><span>1</span></td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
   </script>
 </div>
 </body>

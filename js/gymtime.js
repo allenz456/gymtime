@@ -7,8 +7,10 @@ $(function() {
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
-  Parse.initialize("NPAZBONQNApt7KpEfSfZPdtiCNIIyxnh3s4tIOv9",
-                   "FdCQGOseoMqfVtxgshI2Ow9tEHxW1bIPme7g5Cpk");
+  // Parse.initialize("NPAZBONQNApt7KpEfSfZPdtiCNIIyxnh3s4tIOv9",
+  //                  "FdCQGOseoMqfVtxgshI2Ow9tEHxW1bIPme7g5Cpk");
+Parse.initialize("7Vgwgh4wBMx90OpRucq3YDvXs4fWjRMZZeCZOMHK", "MekJdMPnciLVkLdWdkUKPhkFPVK3t88oVWsSFuAd");
+
 
   // Class Model
   // ----------
@@ -16,15 +18,33 @@ $(function() {
   var Class = Parse.Object.extend("Class", {
     // Default attributes.
     defaults: {
-      name: "",
-      location: "",
+      name: "None",
+      type: "None",
+      dateTime: "None"
     },
 
     // Initialize
     initialize: function() {
       if (!this.get("content")) {
         this.set({"name": this.defaults.name});
-        this.set({"location": this.defaults.location});
+        this.set({"type": this.defaults.type});
+        this.set({"dateTime": this.defaults.dateTime});
+      }
+    }
+  });
+
+  var Schedule = Parse.Object.extend("Schedule", {
+    // Default attributes.
+    defaults: {
+      day: "None",
+      Class: "",
+    },
+
+    // Initialize
+    initialize: function() {
+      if (!this.get("content")) {
+        this.set({"day": this.defaults.day});
+        this.set({"Class": this.defaults.Class});
       }
     }
   });
@@ -45,6 +65,11 @@ $(function() {
     model: Class
   });
 
+  var scheduleList = Parse.Collection.extend({
+
+    // Reference to this collection's model.
+    model: Schedule
+  });
 
 
   var WelcomeView = Parse.View.extend({
@@ -61,13 +86,29 @@ $(function() {
 
   var ClassesView = Parse.View.extend({
     el: ".content",
-
+    template: _.template($("#classes-template").html()),
     initialize: function () {
-      this.render();
+      var self = this;
+      this.test = new scheduleList();
+      this.test.fetch({
+        success: function(test) {
+          this.test = test;
+          test.each(function(object) {
+            console.log(object.get("Class"));
+          });
+          self.render();
+        },
+        error: function(test, error) {
+          console.log("could not retrieve collecitons");
+        }
+      });
+      
     },
     
     render: function () {
-      this.$el.html(_.template($("#classes-template").html()));
+      console.log(this.test);
+      this.$el.html(this.template({test: this.test.toJSON() }));
+      return this;
     }
   });
 
