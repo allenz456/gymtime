@@ -128,7 +128,29 @@ function loadSchedule() {
           { "name": "Athletic Yoga", "type": "MB", "time": "7:00 - 8:00"},\
           { "name": "Yoga - All Levels", "type": "MB", "time": "12:00 - 13:00"},\
           { "name": "Vinyasa", "type": "MB", "time": "17:30 - 18:30"},\
-          { "name": "Yoga - All Levels", "type": "MB", "time": "19:00 - 20:00"}]}}');
+          { "name": "Yoga - All Levels", "type": "MB", "time": "19:00 - 20:00"}],\
+      "Thursday":  [{ "name": "Cycle Express", "type": "CS", "time": "06:10 - 06:50"},\
+          { "name": "Circuit Conditioning", "type": "CS", "time": "07:00 - 08:00"},\
+          { "name": "Cycle Express", "type": "CS", "time": "12:10 - 12:50"},\
+          { "name": "Cardio Combat", "type": "CS", "time": "16:15 - 16:45"},\
+          { "name": "Bodypump", "type": "CS", "time": "17:30 - 18:30"},\
+          { "name": "Zumba", "type": "CS", "time": "18:45 - 19:45"},\
+          { "name": "Athletic Yoga", "type": "MB", "time": "7:00 - 8:00"},\
+          { "name": "Vinyasa", "type": "MB", "time": "12:00 - 1:00"},\
+          { "name": "Yoga - All Levels", "type": "MB", "time": "17:30 - 18:30"},\
+          { "name": "Pilates", "type": "MB", "time": "19:00 - 20:00"}],\
+      "Friday":  [{ "name": "Aqua Fitness", "type": "CS", "time": "08:30 - 09:30"},\
+          { "name": "H.I.I.T", "type": "CS", "time": "12:00 - 12:30"},\
+          { "name": "Core Conditioning", "type": "CS", "time": "12:35 - 13:00"},\
+          { "name": "Cycle Circuit", "type": "CS", "time": "17:30 - 18:30"},\
+          { "name": "Hatha 1-2", "type": "MB", "time": "12:00 - 1:00"},\
+          { "name": "Hatha 1-2", "type": "MB", "time": "17:30 - 18:30"}],\
+      "Saturday":  [{ "name": "Bodypump", "type": "CS", "time": "09:45 - 10:45"},\
+          { "name": "Cycle Circuit", "type": "CS", "time": "12:00 - 13:00"},\
+          { "name": "Yoga - All Levels", "type": "MB", "time": "11:00 - 12:00"}],\
+      "Sunday":  [{ "name": "Cycle Challenge", "type": "CS", "time": "12:00 - 01:00"},\
+          { "name": "Zumba", "type": "CS", "time": "15:00 - 16:00"},\
+          { "name": "Yoga - All Levels", "type": "MB", "time": "12:00 - 13:00"}]}}');
 
   return classes
 }
