@@ -12,15 +12,15 @@ var machines = [
 
 function writeTable() {
 	for (var i = 0; i < machines.length; i++) {
-		class_name = "." + key;
+		class_name = "." + machines[i].key;
 		key = machines[i].key;
 		free = machines[i].free;
 		occupied = machines[i].occupied;
 		img = "img/i_" + machines[i].key + ".png";
-		$(".machines tbody").append('<tr class="' + key + '">');
+		$(".machines").append('<tr class="' + key.capitalize() + '">');
 		$("." + key).append('<td><img src="' + img + '" width="50"></td>');
 		$(class_name).append('<td>' + key + '</td>');
-		$(class_name).appeend('<td><span>' + free + '</span></td>');
+		$(class_name).append('<td><span>' + free + '</span></td>');
 		$(class_name).append('<td><span>' + occupied + '</span></td></tr>')
 	}
 
