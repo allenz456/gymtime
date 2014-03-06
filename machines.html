@@ -33,52 +33,65 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Machines</h1>
-      <p>View available machines.</p>
+  <div id="wrap">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Machines</h1>
+        <p>View available machines.</p>
+      </div>
+      <table class="machines">
+        <thead>
+          <th></th>
+          <th>Machine Type</th>
+          <th>Free</th>
+          <th>Occupied</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td><img src="img/i_treadmill.png" width="50"></td>
+          <td>Treadmill</td>
+          <td><span>6</span></td>
+          <td><span>3</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_ellyptical.png" width="60"></td>
+          <td>Ellyptical</td>
+          <td><span>8</span></td>
+          <td><span>4</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_bicycle.png" width="50"></td>
+          <td>Bicycle</td>
+          <td><span>1</span></td>
+          <td><span>3</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_rowing.png" width="50"></td>
+          <td>Rowing</td>
+          <td><span>3</span></td>
+          <td><span>0</span></td>
+        </tr>
+        <tr>
+          <td><img src="img/i_stairmaster.png" width="50"></td>
+          <td>Stairmaster</td>
+          <td><span>4</span></td>
+          <td><span>1</span></td>
+        </tr>
+      </tbody>
+      </table>
     </div>
-    <table class="machines">
-      <thead>
-        <th></th>
-        <th>Machine Type</th>
-        <th>Free</th>
-        <th>Occupied</th>
-      </thead>
-      <tbody>
-      <tr>
-        <td><img src="img/i_treadmill.png" width="50"></td>
-        <td>Treadmill</td>
-        <td><span>6</span></td>
-        <td><span>3</span></td>
-      </tr>
-      <tr>
-        <td><img src="img/i_ellyptical.png" width="60"></td>
-        <td>Ellyptical</td>
-        <td><span>8</span></td>
-        <td><span>4</span></td>
-      </tr>
-      <tr>
-        <td><img src="img/i_bicycle.png" width="50"></td>
-        <td>Bicycle</td>
-        <td><span>1</span></td>
-        <td><span>3</span></td>
-      </tr>
-      <tr>
-        <td><img src="img/i_rowing.png" width="50"></td>
-        <td>Rowing</td>
-        <td><span>3</span></td>
-        <td><span>0</span></td>
-      </tr>
-      <tr>
-        <td><img src="img/i_stairmaster.png" width="50"></td>
-        <td>Stairmaster</td>
-        <td><span>4</span></td>
-        <td><span>1</span></td>
-      </tr>
-    </tbody>
-    </table>
+
   </div>
 
+  <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="row-fluid">
+        <div class="container text-center">
+          <p class="muted credit">Gymtime - EECS 330 Human Computer Interaction</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

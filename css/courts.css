@@ -1,0 +1,36 @@
+.court {
+	height:100px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.court-wrapper {
+	margin-left:45px;
+}
+
+.key {
+	
+}
+
+.legend-wrapper {
+	margin-right: 10px;
+}
+
+.legend {
+	margin-top:35px;
+}
+.taken {
+	background-color: red;
+}
+
+.free {
+	background-color: green;
+}
+
+/*#push {
+	height:200px;
+}*/
+
+.court p {
+	padding-top:30px;
+}
