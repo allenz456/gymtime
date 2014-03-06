@@ -4,10 +4,10 @@ $(document).ready(function() {
 
 var machines = [
 {"key": "treadmill", "free": 5, "occupied": 3},
-{"key": "ellyptical", "free": 5, "occupied": 3},
-{"key": "bicycle", "free": 5, "occupied": 3},
-{"key": "rowing", "free": 5, "occupied": 3},
-{"key": "stairmaster", "free": 5, "occupied": 3},
+{"key": "ellyptical", "free": 4, "occupied": 1},
+{"key": "bicycle", "free": 2, "occupied": 2},
+{"key": "rowing", "free": 4, "occupied": 0},
+{"key": "stairmaster", "free": 3, "occupied": 2},
 ]
 
 function writeTable() {
