@@ -17,11 +17,11 @@ function writeTable() {
 		free = machines[i].free;
 		occupied = machines[i].occupied;
 		img = "img/i_" + machines[i].key + ".png";
-		$(".machines").append('<tr class="' + key.capitalize() + '">');
+		$(".machines").append('<tr class="' + key + '">');
 		$("." + key).append('<td><img src="' + img + '" width="50"></td>');
-		$(class_name).append('<td>' + key + '</td>');
-		$(class_name).append('<td><span>' + free + '</span></td>');
-		$(class_name).append('<td><span>' + occupied + '</span></td></tr>')
+		$(class_name).append('<td class="name">' + key + '</td>');
+		$(class_name).append('<td><span class="free">&bull;</span><span>' + free + '</span></td>');
+		$(class_name).append('<td><span class="occupied">&bull;</span><span>' + occupied + '</span></td></tr>')
 	}
 
 }

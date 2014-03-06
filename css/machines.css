@@ -29,3 +29,17 @@ table.machines td > img {
 table.machines td > span {
 	/*margin-left: 30px;*/
 }
+
+.name {
+	text-transform: capitalize;
+}
+
+.free {
+	padding-right: 8px;
+	color: #8CC63C;
+}
+
+.occupied {
+	padding-right: 8px;
+	color: #CF0D0D;
+}
