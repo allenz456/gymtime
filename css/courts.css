@@ -20,11 +20,11 @@
 	margin-top:35px;
 }
 .taken {
-	background-color: red;
+	background-color: #CF0D0D;
 }
 
 .free {
-	background-color: green;
+	background-color: #8CC63C;
 }
 
 /*#push {
