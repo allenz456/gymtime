@@ -1,16 +1,45 @@
+table.court-wrapper {
+	margin: 0 auto;
+}
+
+table.court-wrapper td {
+	margin-bottom: 30px;
+}
+
 .court {
-	height:100px;
+	height:110px;
+	width:195px;
 	margin-right: 10px;
 	margin-top: 10px;
-	border-radius: 10px;
+	border-radius: 4px;
 }
 
 .court:hover {
 	cursor: pointer;
 }
 
-.court-wrapper {
-	margin-left:45px;
+.key {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.special {
+	margin-top: -50px;
+}
+
+span.legend-color {
+	float:left;
+	width:45px;
+}
+
+td.special-key {
+	vertical-align: none !important;
+
+}
+
+.legend-text {
+	margin-left:20px;
+	float:left;
 }
 
 .legend-wrapper {
@@ -20,6 +49,7 @@
 .legend {
 	margin-top:35px;
 }
+
 .taken {
 	background-color: #CF0D0D;
 }
@@ -28,16 +58,7 @@
 	background-color: #8CC63C;
 }
 
-/*#push {
-	height:200px;
-}*/
-
 .court p {
 	padding-top:30px;
 }
 
-@media (min-width: 992px) {
-	.col-md-push-6 {
-		left: 51%;
-	}
-}

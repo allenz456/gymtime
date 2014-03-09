@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/courts.css">
-  <link rel="stylesheet" type="text/css" href="css/calendar.css">
+
   <!-- Javascript -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -42,7 +42,52 @@
         <h1>Courts</h1>
         <p id="desc">View court availabilities.</p>
       <!-- </div> -->
+    <table class="court-wrapper">
+        <thead>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class='court taken' id='6'><p>6</p></div>
+            </td>
+            <td>
+                <div class='court free' id='5'><p>5</p></div>
+            </td>
+          </tr>
 
+          <tr>
+            <td>
+              <div class='court free' id='4'><p>4</p></div>
+            </td>
+            <td>
+              <div class='court free' id='3'><p>3</p></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p>Legend</p>
+              <p class='key'><span class="legend-color free">&nbsp;</span><span class='legend-text'>Free</span></p>
+              
+            </td>
+            <td>
+              <div class='court taken' id='2'><p>2</p></div>
+            </td>
+          </tr>
+          <tr>
+            <td class='special-key'>
+              <p class='special key'><span class="legend-color taken">&nbsp;</span><span class='legend-text'>Taken</span></p>
+            </td>
+            <td>
+              <div class='court free' id='1'><p>1</p></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+<!-- 
       <div class="court-wrapper">
         <div class="row">
           <div class=" col-md-4 col-md-offset-2 court taken" id="1"><p>1</p></div>
@@ -84,7 +129,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
     </div>
