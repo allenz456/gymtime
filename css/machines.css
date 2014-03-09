@@ -43,3 +43,8 @@ table.machines td > span {
 	padding-right: 8px;
 	color: #CF0D0D;
 }
+
+.map {
+	display: none;
+	margin: 0 auto;
+}
