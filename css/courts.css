@@ -18,23 +18,13 @@ table.court-wrapper td {
 	cursor: pointer;
 }
 
-.key {
-	margin-left: 40px;
-	margin-right: 40px;
-}
-
-.special {
-	margin-top: -50px;
+.court p {
+	padding-top:40px;
 }
 
 span.legend-color {
 	float:left;
 	width:45px;
-}
-
-td.special-key {
-	vertical-align: none !important;
-
 }
 
 .legend-text {
@@ -46,8 +36,13 @@ td.special-key {
 	margin-right: 10px;
 }
 
-.legend {
-	margin-top:35px;
+.key {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.special {
+	margin-top: -50px;
 }
 
 .taken {
@@ -58,7 +53,40 @@ td.special-key {
 	background-color: #8CC63C;
 }
 
-.court p {
-	padding-top:30px;
+table.calendar-wrapper{
+	/*border: 1px solid black;*/
+	 border-collapse:separate;
+    border-spacing:5px 5px;
 }
 
+td {
+	width: 150px
+}
+.overflow {
+    width: 700px;
+    overflow-x:scroll;  
+    margin-left:5em;
+    overflow-y:visible;
+    padding-bottom:1px;
+}
+.headcol {
+    position:absolute;
+    width:5em;
+    left:0;
+    top:auto;
+    border-right: 0px none black;
+    /*border-top-width:3px; only relevant for first row*/
+    /*margin-top:-3px; compensate for top border*/
+}
+
+.calFix {
+	width:150px;
+}
+
+.calEntry {
+	height:50px;
+}
+
+.calEntry:hover {
+	cursor: pointer;
+}
