@@ -23,5 +23,4 @@ function writeTable() {
 		$(class_name).append('<td><span class="free">&bull;</span><span>' + free + '</span></td>');
 		$(class_name).append('<td><span class="occupied">&bull;</span><span>' + occupied + '</span></td></tr>')
 	}
-
 }
