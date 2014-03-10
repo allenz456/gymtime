@@ -1,0 +1,98 @@
+table.court-wrapper {
+	margin: 0 auto;
+}
+
+table.court-wrapper td {
+	margin-bottom: 30px;
+}
+
+.court {
+	height:110px;
+	width:195px;
+	margin-right: 10px;
+	margin-top: 10px;
+	border-radius: 4px;
+}
+
+.court:hover {
+	cursor: pointer;
+}
+
+.court p {
+	padding-top:40px;
+}
+
+span.legend-color {
+	float:left;
+	width:45px;
+}
+
+.legend-text {
+	margin-left:20px;
+	float:left;
+}
+
+.legend-wrapper {
+	margin-right: 10px;
+}
+
+.key {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.special {
+	margin-top: -50px;
+}
+
+.taken {
+	background-color: #CF0D0D;
+}
+
+.free {
+	background-color: #8CC63C;
+}
+
+table.calendar-wrapper{
+	/*border: 1px solid black;*/
+	 border-collapse:separate;
+    border-spacing:5px 5px;
+}
+
+td {
+	width: 150px
+}
+.overflow {
+    width: 700px;
+    overflow-x:scroll;  
+    margin-left:5em;
+    overflow-y:visible;
+    padding-bottom:1px;
+}
+.headcol {
+    position:absolute;
+    width:5em;
+    left:0;
+    top:auto;
+    border-right: 0px none black;
+    /*border-top-width:3px; only relevant for first row*/
+    /*margin-top:-3px; compensate for top border*/
+}
+
+.calFix {
+	width:150px;
+}
+
+.calEntry {
+	height:50px;
+}
+
+.calEntry:hover {
+	cursor: pointer;
+}
+
+.highlight {
+	border-style:solid;
+	border-width:medium;
+	border-color: blue;
+}
