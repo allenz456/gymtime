@@ -8,11 +8,21 @@ $(document).ready(function() {
 
     $('td.calEntry').on("click", function() {
         var classes = this.className.split(' ');
+        var elem = this;
+        console.log(elem);
 
         if (classes.indexOf("free") >= 0) {
-            $(this).removeClass("free");
-            $(this).addClass("userReserved");
-            bootbox.alert("Successfully reserved court.");
+            bootbox.prompt("What is your netID?", function(result) {
+                if (result.length != 6) {
+                    bootbox.alert("Invalid netID, please try again.");
+                } else {
+                    console.log(result);
+                    $(elem).removeClass("free");
+                    $(elem).addClass("userReserved");
+                    $(elem, 'div')[0].innerHTML = result;
+                    bootbox.alert("Successfully reserved court");
+                }
+            });
         } else {
             bootbox.alert("Court is already reserved :(");
         }
