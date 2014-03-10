@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GymTime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reserve.css">
+
+  <!-- Javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="js/reserve.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">GymTime</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="courts.html">Courts</a></li>
+          <li><a href="machines.html">Machines</a></li>
+          <li><a href="classes.html">Classes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="wrap">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Courts</h1>
+        <p id="desc">Reserve a court</p>
+      <!-- </div> -->
+      <div class="row">
+        <div class="content-wrapper">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="overflow">
+              <table class="calendar-wrapper panel-info">
+                <thead class="panel-heading"></thead>
+                <tbody>
+                  <tr class="headers">
+                    <td class="headcol">&nbsp;</td>
+                    <td><div class="calFix">8:00am - 9:00am</div></td>
+                    <td><div class="calFix">9:00am - 10:00am</div></td>
+                    <td><div class="calFix">10:00am - 11:00am</div></td>
+                    <td><div class="calFix">11:00am - 12:00pm</div></td>
+                    <td><div class="calFix">12:00pm - 1:00pm</div></td>
+                    <td><div class="calFix">1:00pm - 2:00pm</div></td>
+                    <td><div class="calFix">2:00pm - 3:00pm</div></td>
+                    <td><div class="calFix">3:00pm - 4:00pm</div></td>
+                    <td><div class="calFix">4:00pm - 5:00pm</div></td>
+                    <td><div class="calFix">5:00pm - 6:00pm</div></td>
+                    <td><div class="calFix">6:00pm - 7:00pm</div></td>
+                    <td><div class="calFix">7:00pm - 8:00pm</div></td>
+                    <td><div class="calFix">8:00pm - 9:00pm</div></td>
+                    <td><div class="calFix">9:00pm - 10:00pm</div></td>
+                  </tr>
+                  <tr class="calRow court-1">
+                    <td class="headcol"><p>1</p></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="1"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="1"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                  <tr class="calRow court-2">
+                    <td class="headcol"><p>2</p></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="2"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                  <tr class="calRow court-3">
+                    <td class="headcol"><p>3</p></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="3"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="3"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                  <tr class="calRow court-4">
+                    <td class="headcol"><p>4</p></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="4"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                  <tr class="calRow court-5">
+                    <td class="headcol"><p>5</p></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="5"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                  <tr class="calRow court-6">
+                    <td class="headcol"><p>6</p></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry free" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                    <td class="calEntry taken" id="6"><div class="calFix slot">&nbsp;</div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> <!-- end content-wrapper -->
+      </div>
+    </div>
+  </div>
+
+  <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="row-fluid">
+        <div class="container text-center">
+          <p class="muted credit">Gymtime - EECS 330 Human Computer Interaction</p>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
