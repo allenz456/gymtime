@@ -105,7 +105,7 @@ function displayClass(selectedClass) {
       if (classInfo[info]["name"] == selectedClass) {
         numClasses += 1;
         var className = classInfo[info]["name"];
-        var classTime = classInfo[info]["time"];
+        var classTime = timeConverter(classInfo[info]["time"]);
 
        HTML += "<div class='row'>"
             + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
@@ -131,7 +131,7 @@ function displayType(type) {
     for (var info in classInfo) {
       if (classInfo[info]["type"] == type) {
       var className = classInfo[info]["name"];
-      var classTime = classInfo[info]["time"];
+      var classTime = timeConverter(classInfo[info]["time"]);
 
      document.getElementById("classes").innerHTML += "<div class='row'>"
                                                   + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
@@ -144,6 +144,29 @@ function displayType(type) {
   rememberSelectedClasses();
 }
 
+function timeConverter(time){
+  time = time.split(" - ");
+  sTime = time[0];
+  eTime = time[1];
+
+  var newTime = "";
+  // start time
+  sTime = sTime.split(":");
+  newTime += (sTime[0] % 12) || 12;
+  newTime += ":" + sTime[1];
+  if (sTime[0] < 12 ) { newTime += "AM" }
+  else { newTime += "PM" }
+
+  newTime += " - ";
+
+  eTime = eTime.split(":");
+  newTime += (eTime[0] % 12) || 12;
+  newTime += ":" + eTime[1];
+  if (eTime[0] < 12 ) { newTime += "AM" }
+  else { newTime += "PM" }
+
+  return newTime;
+}
 
 
 // Need better way to retrieve JSON
