@@ -49,6 +49,10 @@ span.legend-color {
 	background-color: #CF0D0D;
 }
 
+.userReserved {
+	background-color: #520063;
+}
+
 .free {
 	background-color: #8CC63C;
 }

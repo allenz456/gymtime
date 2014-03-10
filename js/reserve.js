@@ -5,6 +5,18 @@ $(document).ready(function() {
 		courtNum = undefined;
 
 	$( "tr.court-" + courtNum + " td.headcol p" ).addClass("highlight");
+
+    $('td.calEntry').on("click", function() {
+        var classes = this.className.split(' ');
+
+        if (classes.indexOf("free") >= 0) {
+            $(this).removeClass("free");
+            $(this).addClass("userReserved");
+            bootbox.alert("Successfully reserved court.");
+        } else {
+            bootbox.alert("Court is already reserved :(");
+        }
+    });
 });
 
 function GetQueryStringParams(sParam) {
