@@ -76,12 +76,18 @@ td {
 }
 .headcol {
     position:absolute;
-    width:5em;
+    width:6em;
     left:0;
     top:auto;
     border-right: 0px none black;
+    margin-top: 5px;
     /*border-top-width:3px; only relevant for first row*/
     /*margin-top:-3px; compensate for top border*/
+}
+
+.timeText {
+	font-size: 15px;
+	margin-bottom: 0px;
 }
 
 .calFix {
@@ -98,6 +104,14 @@ td {
 
 .highlight {
 	border-style:solid;
-	border-width:medium;
+	/*border: 2px none ;*/
+	border-width: 2px;
 	border-color: #39b3d7;
+}
+
+p.reservedText {
+	color:white;
+	margin-bottom:0px;
+	margin-top: -15px;
+	font-size: 20px;
 }
