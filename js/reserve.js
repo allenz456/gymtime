@@ -12,7 +12,10 @@ $(document).ready(function() {
 
         if (classes.indexOf("free") >= 0) {
             bootbox.prompt("What is your netID?", function(result) {
-                if (result.length != 6) {
+                if (result === null) {
+                    console.log("prompt cancelled")
+                }
+                else if (result.length != 6) {
                     bootbox.alert("Invalid netID, please try again.");
                 } else {
                     $(elem).removeClass("free");
