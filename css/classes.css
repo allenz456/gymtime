@@ -14,6 +14,13 @@
   	display: inline;
 }
 
+.panel-scrollable {
+	max-height: 375px;
+}
+
+#push {
+	height: 0px;
+}
 @media screen and (max-width: 768px) {
 	.form-control {
 		font-size: 9px;
@@ -26,7 +33,7 @@
 	}
 
 	.panel-scrollable { 
-		max-height: 375px;
+		max-height: 325px;
 		overflow-y: scroll;
 	}
 }

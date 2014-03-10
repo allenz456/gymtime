@@ -21,6 +21,30 @@ $(document).ready(function(){
     changeFilterClasses(classes["MB"]);
   });
 
+  $("input.sign-up").change(function() {
+    var className = $(this).attr("id");
+    className = className.replace(/-/g, ' ');
+    if (!$(this).prop('checked')) {
+      bootbox.confirm("Cancelling sign-up for " + className, function(result) {
+
+      });
+    } else {
+      bootbox.prompt("What is your netID?", function(result) {
+                if (result === null) {
+                    console.log("prompt cancelled")
+                }
+                else if (result.length != 6) {
+                    bootbox.alert("Invalid netID, please try again.");
+                } else {
+
+                    $(this).prop( "checked", true );
+                    bootbox.alert("Successfully signed up for " + className);
+                }
+      });
+    }
+    
+  });
+
   recallSelectedClasses();
   rememberSelectedClasses();
 
@@ -38,8 +62,8 @@ function recallSelectedClasses() {
 
 function rememberSelectedClasses() {
   $("input.sign-up").change(function() {
-  console.log("clicked" + $(this).attr("id"));
-  // localStorage.setItem($(this).attr("id"), $(this).prop('checked'));
+    console.log("clicked" + $(this).attr("id"));
+  
     $.cookie($(this).attr("id"), $(this).prop('checked'), {
         path: '/',
         expires: 365
