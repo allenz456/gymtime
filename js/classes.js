@@ -5,6 +5,8 @@ $(document).ready(function(){
   displayType("MB");
   var classesCS = classes["MB"];
   document.getElementById("class-filter").innerHTML = '<option value="MB">All Classes</option>';
+  document.getElementById("class-filter").innerHTML += '<option value="MB">My Classes</option>';
+
   for (var classCS in classesCS) {
       document.getElementById("class-filter").innerHTML += '<option>' + classesCS[classCS] + '</option>';
     }
@@ -73,6 +75,7 @@ function rememberSelectedClasses() {
 
 function changeFilterClasses(classes) {
   document.getElementById("class-filter").innerHTML = '<option value="CS">All Classes</option>';
+  document.getElementById("class-filter").innerHTML += '<option value="CS">My Classes</option>';
     for (var filterClass in classes) {
       document.getElementById("class-filter").innerHTML += '<option>' + classes[filterClass] + '</option>';
     }
@@ -84,11 +87,50 @@ function filterClass() {
   if (selectedClass == "All Classes") {
     selectedClass = selected.options[selected.selectedIndex].value;
     displayType(selectedClass);
+  } 
+  else if (selectedClass == "My Classes"){
+    displayMyClasses();
   } else {
     displayClass(selectedClass);
   }
   console.log(selectedClass);
 
+}
+
+function displayMyClasses() {
+  document.getElementById("classes").innerHTML = "";
+  var numClassesTotal = 0;  
+  for (var day in schedule) {
+    var numClasses = 0;
+    var HTML = "";
+    var classInfo = schedule[day];
+    HTML += "<h3>"+ day + "</h3><hr><div class='row'>"
+          + "<div class='col-sm-2 col-sm-offset-10 col-xs-offset-8 text-center'><h6>Attending?</h6></div>"
+          + "</div>"; 
+    for (var info in classInfo) {
+        var className = classInfo[info]["name"];
+        var classTime = timeConverter(classInfo[info]["time"]);
+        var mycookie = $.cookie(className+"-"+day+"-"+classTime);
+      if (mycookie && mycookie == "true") {
+        numClasses += 1;
+        numClassesTotal += 1;
+
+        HTML += "<div class='row'>"
+            + "<div class='col-sm-10 col-xs-9'><h4>"+className+"</h4><p>"+classTime+"</p></div>"
+            + "<div class='col-sm-2 text-center'><div class='btn-group' data-toggle='buttons'><label class='btn attending-btn btn-info'><input type='checkbox' class='sign-up' id='"+className+"-"+day+"-"+classTime+"'></label></div></div>"
+            + "</div>"; 
+      }
+    }
+    if (numClasses > 0) {
+      document.getElementById("classes").innerHTML += HTML;
+    }
+  }
+  if(numClassesTotal == 0) {
+      document.getElementById("classes").innerHTML += "<div class='row text-center'><h4>You have not signed up for any classes</h4></div>";
+
+  }
+  recallSelectedClasses();
+  rememberSelectedClasses();
 }
 
 function displayClass(selectedClass) {
