@@ -23,29 +23,29 @@ $(document).ready(function(){
     changeFilterClasses(classes["MB"]);
   });
 
-  $("input.sign-up").change(function() {
-    var className = $(this).attr("id");
-    className = className.replace(/-/g, ' ');
-    if (!$(this).prop('checked')) {
-      bootbox.confirm("Cancelling sign-up for " + className, function(result) {
+  // $("input.sign-up").change(function() {
+  //   var className = $(this).attr("id");
+  //   className = className.replace(/-/g, ' ');
+  //   if (!$(this).prop('checked')) {
+  //     bootbox.confirm("Cancelling sign-up for " + className, function(result) {
 
-      });
-    } else {
-      bootbox.prompt("What is your netID?", function(result) {
-                if (result === null) {
-                    console.log("prompt cancelled")
-                }
-                else if (result.length != 6) {
-                    bootbox.alert("Invalid netID, please try again.");
-                } else {
+  //     });
+  //   } else {
+  //     bootbox.prompt("What is your netID?", function(result) {
+  //               if (result === null) {
+  //                   console.log("prompt cancelled")
+  //               }
+  //               else if (result.length != 6) {
+  //                   bootbox.alert("Invalid netID, please try again.");
+  //               } else {
 
-                    $(this).prop( "checked", true );
-                    bootbox.alert("Successfully signed up for " + className);
-                }
-      });
-    }
+  //                   $(this).prop( "checked", true );
+  //                   bootbox.alert("Successfully signed up for " + className);
+  //               }
+  //     });
+  //   }
     
-  });
+  // });
 
   recallSelectedClasses();
   rememberSelectedClasses();
@@ -129,6 +129,38 @@ function displayMyClasses() {
       document.getElementById("classes").innerHTML += "<div class='row text-center'><h4>You have not signed up for any classes</h4></div>";
 
   }
+  $("input.sign-up").change(function() {
+    var className = $(this).attr("id");
+    className = className.replace(/-/g, ' ');
+    if (!$(this).prop('checked')) {
+      bootbox.confirm("Cancelling sign-up for " + className, function(result) {
+        if (result == null) {
+          $(this).prop( "checked", false );
+          $(this).parent().removeClass("active");
+
+        }
+      });
+    } else {
+      bootbox.prompt("What is your netID?", function(result) {
+                if (result === null) {
+                    console.log("prompt cancelled")
+                    $(this).prop( "checked", false );
+                    $(this).parent().removeClass("active");
+
+
+                }
+                else if (result.length != 6) {
+                    bootbox.alert("Invalid netID, please try again.");
+                    $(this).prop( "checked", false );
+                    $(this).parent().removeClass("active");
+                } else {
+                    $(this).prop( "checked", true );
+                    bootbox.alert("Successfully signed up for " + className);
+                }
+      });
+    }
+    
+  });
   recallSelectedClasses();
   rememberSelectedClasses();
 }
@@ -159,6 +191,29 @@ function displayClass(selectedClass) {
       document.getElementById("classes").innerHTML += HTML;
     }
   }
+  $("input.sign-up").change(function() {
+    var className = $(this).attr("id");
+    className = className.replace(/-/g, ' ');
+    if (!$(this).prop('checked')) {
+      bootbox.confirm("Cancelling sign-up for " + className, function(result) {
+        if (result == null) {
+        }
+      });
+    } else {
+      bootbox.prompt("What is your netID?", function(result) {
+                if (result === null) {
+                    console.log("prompt cancelled");
+
+                }
+                else if (result.length != 6) {
+                    bootbox.alert("Invalid netID, please try again.");
+                } else {
+                    bootbox.alert("Successfully signed up for " + className);
+                }
+      });
+    }
+    
+  });
   recallSelectedClasses();
   rememberSelectedClasses();
 }
@@ -182,6 +237,28 @@ function displayType(type) {
       }
     }
   }
+  $("input.sign-up").change(function() {
+    var className = $(this).attr("id");
+    className = className.replace(/-/g, ' ');
+    if (!$(this).prop('checked')) {
+      bootbox.confirm("Cancelling sign-up for " + className, function(result) {
+        if (result == null) {
+        }
+      });
+    } else {
+      bootbox.prompt("What is your netID?", function(result) {
+                if (result === null) {
+                    console.log("prompt cancelled")
+                }
+                else if (result.length != 6) {
+                    bootbox.alert("Invalid netID, please try again.");
+                } else {
+                    bootbox.alert("Successfully signed up for " + className);
+                }
+      });
+    }
+    
+  });
   recallSelectedClasses();
   rememberSelectedClasses();
 }
